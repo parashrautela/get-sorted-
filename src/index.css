@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Denton Test';
+  src: url('/DentonCondensedTest-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Test';
+  src: url('/DentonCondensedTest-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Test';
+  src: url('/DentonCondensedTest-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Test';
+  src: url('/DentonCondensedTest-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Test';
+  src: url('/DentonCondensedTest-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Manrope', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-denton: 'Denton Test', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+
+  --color-brand-blue: #0361e2;
+  --color-brand-blue-light: #b1cef6;
+  --color-brand-blue-soft: #e6effc;
+  --color-brand-orange: #ff9500;
+  --color-brand-green: #22c55e;
+  --color-brand-gray: #64748b;
+  --color-brand-dark: #020617;
+  --color-brand-bg: #fafafa;
+  --color-brand-card: #ffffff;
+  --color-brand-border: #e2e8f0;
+
+  --animate-pulse-slow: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-mic-wave: micWave 1.8s ease-in-out infinite;
+}
+
+@keyframes micWave {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+:root {
+  /* Figma variables translated to CSS custom properties */
+  --foreground: #020617;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --secondary: #f1f5f9;
+  --background: #ffffff;
+  --sidebar-background: #fafafa;
+  --red-600: #dc2626;
+  --blue-500: #0361e2;
+  --blue-100: #b1cef6;
+  --blue-50: #e6effc;
+  --colors-orange: #ff9500;
+  --destructive: #22c55e; /* Note: Figma marks the green text/tag as --destructive here */
+  
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #020617;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%);
+  overflow-y: auto;
+}
+
+@media (max-width: 450px) {
+  body {
+    background: #FAF8F8;
+  }
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Glassmorphism scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom interactive animation helper classes */
+.interactive-card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.interactive-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+.interactive-card:active {
+  transform: translateY(0);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-slideUp {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
