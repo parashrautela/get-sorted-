@@ -170,7 +170,8 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
               <span className="text-[22px] font-denton font-semibold text-slate-900 mt-1.5 leading-tight">
                 Overview
               </span>
-            </di            {/* Metrics Grid (2x2) */}
+            </div>
+            {/* Metrics Grid (2x2) */}
             <div className="grid grid-cols-2 gap-4 px-4 animate-fadeIn">
               {/* Bank Balance Card */}
               <div className="bg-white rounded-2xl p-5 flex flex-col justify-between min-h-[110px] border border-slate-200/60 shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200 ease-in-out cursor-pointer">
