@@ -121,33 +121,28 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
     { name: "Netflix & Spotify", count: 2, amount: "1,200", percentage: 6, icon: Receipt }
   ];
 
-  const upcomingPayments = [
+
+  const upcomingCommitments = [
     {
       name: "HDFC Term Insurance",
       dueDate: "Due in 3 days",
       amount: 1850,
       icon: Shield,
-      bgClass: "bg-red-50",
-      iconClass: "text-red-500",
-      dueClass: "text-red-500"
+      dueClass: "text-[#c13515]"
     },
     {
       name: "Netflix Premium",
       dueDate: "Due July 12",
       amount: 649,
       icon: Tv,
-      bgClass: "bg-[#F3E8FF]",
-      iconClass: "text-[#9333EA]",
-      dueClass: "text-[#6B21A8]"
+      dueClass: "text-muted"
     },
     {
       name: "Rent / Electricity",
       dueDate: "Due July 15",
       amount: 15000,
       icon: Landmark,
-      bgClass: "bg-amber-50",
-      iconClass: "text-amber-500",
-      dueClass: "text-[#92400E]"
+      dueClass: "text-muted"
     }
   ];
 
@@ -933,134 +928,138 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
               </div>
             </div>
 
+
+
             {/* Bento Grid Area */}
             <div className="px-4 space-y-4">
               
               {/* Budget Card */}
               <div 
                 onClick={() => onNavigate('recurring')}
-                className="bg-white rounded-2xl p-4 flex justify-between shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100 hover:shadow-[0_4px_25px_rgba(0,0,0,0.05)] transition-all duration-300 interactive-card cursor-pointer hover:scale-[0.99]"
+                className="bg-[#FDF2F0] rounded-[24px] p-5 flex justify-between shadow-sm border-none hover:shadow-md transition-all duration-300 interactive-card cursor-pointer hover:scale-[0.99]"
               >
                 <div className="flex flex-col justify-between">
-                  <div className="flex items-center space-x-1.5 text-xs font-semibold text-[#64748B] font-poppins leading-none">
+                  <div className="flex items-center space-x-1.5 text-[13px] font-medium text-[#4B5563] font-poppins leading-none">
                     <span className="relative w-4 h-4 shrink-0 flex items-center justify-center">
-                      <span className="absolute left-0 bottom-0 w-[13px] h-[13px] rounded-full bg-[#EC6D4F]" />
-                      <span className="absolute right-0 top-0 w-[9px] h-[9px] rounded-[3px] bg-[#EC6D4F] border-[1.5px] border-white" />
+                      <span className="absolute left-0 bottom-0 w-[13px] h-[13px] rounded-full bg-[#F36B42]" />
+                      <span className="absolute right-0 top-0 w-[9px] h-[9px] rounded-[3px] bg-[#F36B42] border-[1.5px] border-[#FDF2F0]" />
                     </span>
                     <span>Budget</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-[#94A3B8]" strokeWidth={2} />
+                    <ChevronRight className="w-3.5 h-3.5 text-[#9CA3AF]" strokeWidth={2} />
                   </div>
 
-                  <div className="mt-3">
-                    <span className="text-2xl font-denton font-semibold text-[#0F172A] leading-none tracking-tight block">
+                  <div className="mt-4">
+                    <span className="text-[32px] font-denton font-semibold text-[#181111] leading-none tracking-tight block">
                       ₹{budgetSpent}
                     </span>
-                    <span className="text-xs text-[#64748B] font-poppins font-normal mt-1 block">
+                    <span className="text-[13px] text-[#6B7280] font-poppins font-normal mt-1.5 block">
                       of ₹{budgetTotal}
                     </span>
                   </div>
 
-                  <div className="flex items-center space-x-2 text-[10px] text-[#475569] font-poppins font-medium mt-4 whitespace-nowrap">
+                  <div className="flex items-center space-x-2 text-[11px] text-[#4B5563] font-poppins font-medium mt-5 whitespace-nowrap">
                     <span className="flex items-center space-x-1">
-                      <Receipt className="w-3.5 h-3.5 text-[#6E7D97]" strokeWidth={1.8} />
+                      <Receipt className="w-3.5 h-3.5 text-[#9CA3AF]" strokeWidth={1.8} />
                       <span>42 payments</span>
                     </span>
-                    <span className="w-1 h-1 rounded-full bg-[#D2D6DD]"></span>
+                    <span className="w-1 h-1 rounded-full bg-[#D1D5DB]"></span>
                     <span className="flex items-center space-x-1">
-                      <Calendar className="w-3.5 h-3.5 text-[#6E7D97]" strokeWidth={1.8} />
+                      <Calendar className="w-3.5 h-3.5 text-[#9CA3AF]" strokeWidth={1.8} />
                       <span>23 days left</span>
                     </span>
                   </div>
                 </div>
 
                 <div className="flex flex-col items-end justify-between h-full pt-1 shrink-0">
-                  <span className="text-[11px] font-normal text-[#697891] font-poppins leading-none mb-1">
-                    Used <span className="text-[#1769FF] font-bold">50%</span>
+                  <span className="text-[12px] font-normal text-[#6B7280] font-poppins leading-none mb-1">
+                    Used <span className="text-[#2563EB] font-bold">50%</span>
                   </span>
-                  <div className="relative flex items-end space-x-2.5 h-[64px] pb-0.5">
+                  <div className="relative flex items-end space-x-[2px] h-[64px] pb-0.5">
                     {/* Horizontal guide line at 50% height */}
-                    <div className="absolute -left-4 -right-1 top-[32px] h-[1px] bg-[#E2E8F0] z-0"></div>
+                    <div className="absolute -left-4 -right-1 top-[32px] h-[1px] bg-[#E5E7EB] z-0"></div>
                     {/* Current period bar */}
-                    <div className="w-[30px] h-[30px] bg-[#07995C] rounded-[6px] z-10 shadow-[0_2px_8px_rgba(7,153,92,0.15)] hover:scale-105 transition-transform duration-300"></div>
+                    <div className="w-[30px] h-[30px] bg-[#059669] rounded-[4px] rounded-bl-[8px] z-10"></div>
                     {/* Budget target bar */}
-                    <div className="w-[30px] h-[60px] bg-gradient-to-b from-[#92F0C5] to-[#15AA70] rounded-[6px] relative overflow-hidden z-10 shadow-[0_4px_12px_rgba(21,170,112,0.2)] hover:scale-105 transition-transform duration-300">
-                      {/* Division line inside target bar indicating 50% */}
-                      <div className="absolute top-[30px] left-0 right-0 h-[1px] bg-white/70"></div>
+                    <div className="w-[30px] h-[60px] bg-[#059669] rounded-[4px] rounded-br-[8px] relative overflow-hidden z-10 flex flex-col">
+                      <div className="h-1/2 w-full bg-[#6EE7B7]"></div>
+                      <div className="h-[1px] w-full bg-white/90"></div>
+                      <div className="h-1/2 w-full bg-[#059669]"></div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* 2-Column Row for Guild Free Number and Wellness Score */}
-              <div className="grid grid-cols-[1.1fr_0.9fr] gap-3">
+              <div className="grid grid-cols-[1.05fr_0.95fr] gap-3">
                 {/* Guild Free Number Card */}
-                <div className="bg-white rounded-2xl p-4 flex flex-col justify-between h-[126px] shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100 hover:shadow-[0_4px_25px_rgba(0,0,0,0.05)] transition-all duration-300">
-                  <div className="flex items-center space-x-1 text-xs font-semibold text-[#0F172A] font-poppins leading-none whitespace-nowrap">
-                    <Building2 className="w-4 h-4 text-[#F3A35E] fill-[#F3A35E]" strokeWidth={0} />
+                <div className="bg-[#FDF2F0] rounded-[24px] p-5 flex flex-col justify-between h-[150px] shadow-sm border-none hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center space-x-1.5 text-[13px] font-medium text-[#181111] font-poppins leading-none whitespace-nowrap">
+                    <Landmark className="w-4 h-4 text-[#F36B42] fill-[#F36B42]" strokeWidth={1} />
                     <span>Guild Free Number</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-[#94A3B8]" strokeWidth={2} />
+                    <ChevronRight className="w-3.5 h-3.5 text-[#9CA3AF]" strokeWidth={2} />
                   </div>
-                  <div className="flex flex-col mt-2">
-                    <span className="text-2xl font-denton font-semibold text-[#0F172A] leading-none tracking-tight">
+                  <div className="flex flex-col mt-3">
+                    <span className="text-[28px] font-denton font-semibold text-[#181111] leading-none tracking-tight">
                       ₹{monthlySavings}
                     </span>
-                    <div className="flex items-center space-x-1.5 mt-2">
-                      <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-[#ECFFF4] text-[#22C55E] border border-[#22C55E]/40 tracking-tight leading-none whitespace-nowrap">
-                        <ArrowDown className="w-2.5 h-2.5 rotate-180 mr-0.5" strokeWidth={2.5} />
+                    <div className="flex items-center space-x-1.5 mt-2.5">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-transparent text-[#22C55E] border border-[#22C55E] tracking-tight leading-none whitespace-nowrap">
+                        <ArrowDown className="w-3 h-3 rotate-180 mr-0.5" strokeWidth={2} />
                         18%
                       </span>
-                      <span className="text-[10px] text-[#64748B] font-poppins font-normal whitespace-nowrap">up this month</span>
+                      <span className="text-[12px] text-[#181111] font-poppins font-normal whitespace-nowrap">up this month</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Wellness Score Card */}
-                <div className="bg-white rounded-2xl p-3 flex flex-col items-center justify-between h-[126px] shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100 hover:shadow-[0_4px_25px_rgba(0,0,0,0.05)] transition-all duration-300">
-                  <div className="relative w-[110px] h-[60px] overflow-hidden flex items-center justify-center mt-1">
+                <div className="bg-[#FDF2F0] rounded-[24px] p-4 flex flex-col items-center justify-between h-[150px] shadow-sm border-none hover:shadow-md transition-all duration-300">
+                  <div className="relative w-[110px] h-[66px] overflow-hidden flex items-center justify-center mt-2">
                     <svg className="w-full h-full overflow-visible" viewBox="0 0 110 62">
                       <path
                         d="M 10,55 A 45,45 0 0 1 100,55"
                         fill="none"
-                        stroke="#F1F5F9"
-                        strokeWidth="8"
+                        stroke="#22C55E"
+                        strokeOpacity="0.2"
+                        strokeWidth="10"
                         strokeLinecap="round"
                       />
                       <path
                         d="M 10,55 A 45,45 0 0 1 100,55"
                         fill="none"
                         stroke="#22C55E"
-                        strokeWidth="8"
+                        strokeWidth="10"
                         strokeLinecap="round"
                         strokeDasharray="141"
                         strokeDashoffset={141 - (141 * (wellnessScore / 100))}
-                        className="drop-shadow-[0_0_4px_rgba(34,197,94,0.3)] transition-all duration-1000 ease-out"
+                        className="transition-all duration-1000 ease-out"
                       />
                     </svg>
-                    <span className="absolute bottom-[2px] text-xl font-bold text-[#22C55E] font-poppins tracking-tight leading-none">
+                    <span className="absolute bottom-[2px] text-[34px] font-bold text-[#22C55E] font-poppins tracking-tighter leading-none">
                       {wellnessScore}%
                     </span>
                   </div>
-                  <span className="text-[10px] text-[#64748B] font-poppins font-semibold tracking-wide mb-0.5">Wellness Score</span>
+                  <span className="text-[12px] text-[#181111] font-poppins font-medium tracking-wide mb-1">Wellness Score</span>
                 </div>
               </div>
 
               {/* Suggestion Banner */}
-              <div className="bg-gradient-to-br from-[#D8FFF0] via-[#A9F7DB] to-[#63F2BF] rounded-2xl p-4 shadow-[0_8px_30px_rgba(15,23,42,0.06)] border border-[#A7F3D0]/30 hover:shadow-[0_8px_30px_rgba(15,23,42,0.12)] transition-all duration-300 flex flex-col justify-between h-[96px] relative overflow-hidden">
-                <p className="text-xs font-semibold text-[#064E3B] font-poppins leading-snug max-w-[90%]">
+              <div className="bg-gradient-to-br from-[#A7F3D0] to-[#6EE7B7] rounded-[24px] p-5 shadow-sm border-none hover:shadow-md transition-all duration-300 flex flex-col justify-between h-[106px] relative overflow-hidden">
+                <p className="text-[15px] font-medium text-[#111827] font-poppins leading-snug max-w-[90%]">
                   Your late-night Swiggy orders are adding up fast.
                 </p>
                 <div className="flex items-center justify-between w-full mt-2 z-10">
                   <button 
                     onClick={() => onNavigate('ask-ai')}
-                    className="flex items-center space-x-1 text-[11px] font-bold text-[#047857] font-poppins hover:translate-x-0.5 active:scale-95 transition-all duration-200 cursor-pointer leading-none"
+                    className="flex items-center space-x-1 text-[13px] font-bold text-[#047857] font-poppins hover:translate-x-0.5 active:scale-95 transition-all duration-200 cursor-pointer leading-none"
                   >
                     <span>Boost Savings with AI</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-[#047857]" strokeWidth={2.5} />
+                    <ChevronRight className="w-4 h-4 text-[#047857]" strokeWidth={2.5} />
                   </button>
                   <div className="flex items-center space-x-1.5 pr-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#064E3B]/20"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#047857] scale-110 shadow-sm"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#064E3B]/20"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#047857] shadow-sm"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
                   </div>
                 </div>
               </div>
@@ -1082,52 +1081,49 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                 </button>
               </div>
 
-              <div className="flex overflow-x-auto gap-3.5 px-4 pb-3 scrollbar-none snap-x snap-mandatory">
+              <div className="flex overflow-x-auto gap-4 px-4 pb-4 scrollbar-none snap-x snap-mandatory">
                 {goals && goals.map((goal, index) => {
                   const progress = Math.min(100, Math.round((goal.saved / goal.target) * 100));
-                  const theme = colorMap[goal.color] || colorMap.blue;
                   const IconComp = iconMap[goal.icon] || Target;
                   
                   return (
                     <div 
                       key={index} 
                       onClick={() => setActiveGoalDetails(goal)}
-                      className="w-[220px] shrink-0 snap-start bg-white rounded-2xl p-4 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-between h-[116px] interactive-card cursor-pointer hover:shadow-[0_4px_25px_rgba(0,0,0,0.04)] transition-all duration-300 active:scale-95"
+                      className="w-[240px] shrink-0 snap-start bg-canvas p-5 border border-hairline rounded-[16px] flex flex-col justify-between h-[140px] cursor-pointer hover:shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px,rgba(0,0,0,0.1)_0_4px_8px] transition-all duration-300 active:scale-95"
                     >
                       <div className="flex items-start justify-between">
-                        <div className="flex items-center space-x-2 min-w-0">
-                          <div className={`w-8 h-8 rounded-xl ${theme.lightBg} flex items-center justify-center shrink-0`}>
-                            <IconComp className={`w-4 h-4 ${theme.text}`} />
+                        <div className="flex items-center space-x-3 min-w-0">
+                          <div className="w-10 h-10 rounded-full bg-surface-strong border border-hairline flex items-center justify-center shrink-0">
+                            <IconComp className="w-5 h-5 text-ink" strokeWidth={1.5} />
                           </div>
                           <div className="flex flex-col min-w-0">
-                            <span className="text-xs font-bold text-[#0F172A] truncate leading-none">
+                            <span className="text-[15px] font-semibold text-ink truncate tracking-tight">
                               {goal.name}
                             </span>
-                            <span className="text-[9px] font-medium text-[#64748B] flex items-center mt-1">
-                              <Clock className="w-2.5 h-2.5 mr-0.5 text-[#94A3B8]" />
+                            <span className="text-[12px] font-medium text-muted flex items-center mt-1">
                               {goal.timeLeft}
                             </span>
                           </div>
                         </div>
-                        <span className={`text-[10px] font-bold ${theme.text} ${theme.lightBg} px-1.5 py-0.5 rounded-md shrink-0`}>
+                        <span className="text-[12px] font-bold text-ink bg-surface-strong px-2 py-1 rounded-[6px] shrink-0">
                           {progress}%
                         </span>
                       </div>
 
-                      <div className="mt-2">
-                        {/* Progress Bar */}
-                        <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                      <div className="mt-4">
+                        <div className="h-1.5 w-full bg-surface-strong rounded-full overflow-hidden">
                           <div 
-                            className={`h-full rounded-full bg-gradient-to-r ${theme.gradient}`} 
+                            className="h-full rounded-full bg-ink" 
                             style={{ width: `${progress}%` }}
                           />
                         </div>
 
-                        <div className="flex items-baseline justify-between mt-2 font-poppins leading-none">
-                          <span className="text-[10px] font-bold text-[#0F172A]">
+                        <div className="flex items-baseline justify-between mt-2.5 leading-none">
+                          <span className="text-[13px] font-bold text-ink">
                             {formatAmount(goal.saved)}
                           </span>
-                          <span className="text-[9px] font-medium text-[#64748B]">
+                          <span className="text-[11px] font-medium text-muted">
                             of {formatAmount(goal.target)}
                           </span>
                         </div>
@@ -1138,43 +1134,49 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
               </div>
             </div>
 
-            {/* Upcoming Payments Section */}
-            <div className="flex flex-col space-y-3">
-              <div className="px-4">
+            {/* Upcoming Commitments Section */}
+            <div className="flex flex-col space-y-3 mt-2 mb-8">
+              <div className="flex items-center justify-between px-4">
                 <span className="text-xs font-bold tracking-[0.1em] text-[#555555] uppercase font-poppins">
-                  Upcoming Payments
+                  Upcoming Commitments
                 </span>
+                <button 
+                  onClick={() => alert("Opening all commitments")}
+                  className="text-[11px] font-bold text-[#0361e2] font-poppins hover:underline cursor-pointer"
+                >
+                  View All
+                </button>
               </div>
 
-              <div className="px-4 space-y-2.5">
-                {upcomingPayments.map((payment, index) => {
+              <div className="px-4 space-y-3">
+                {upcomingCommitments.map((payment, index) => {
                   const PaymentIcon = payment.icon;
                   return (
                     <div 
                       key={index} 
-                      className="bg-white rounded-2xl p-3 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex items-center justify-between interactive-card transition-all duration-300"
+                      className="bg-canvas p-4 border border-hairline rounded-[14px] hover:shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px,rgba(0,0,0,0.1)_0_4px_8px] flex items-center justify-between transition-all duration-300"
                     >
-                      <div className="flex items-center min-w-0">
-                        <div className={`w-9 h-9 rounded-xl ${payment.bgClass} flex items-center justify-center shrink-0`}>
-                          <PaymentIcon className={`w-4 h-4 ${payment.iconClass}`} />
+                      <div className="flex items-center min-w-0 gap-4">
+                        <div className="w-11 h-11 rounded-full bg-surface-strong border border-hairline flex items-center justify-center shrink-0">
+                          <PaymentIcon className="w-5 h-5 text-ink" strokeWidth={1.5} />
                         </div>
-                        <div className="flex flex-col ml-3 min-w-0">
-                          <span className="text-xs font-bold text-[#0F172A] truncate">
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-[15px] font-semibold text-ink truncate tracking-tight mb-1">
                             {payment.name}
                           </span>
-                          <span className={`text-[10px] font-semibold mt-0.5 ${payment.dueClass}`}>
+                          <span className={`text-[12px] font-medium leading-none ${payment.dueClass}`}>
                             {payment.dueDate}
                           </span>
                         </div>
                       </div>
 
-                      <div className="flex items-center shrink-0 ml-3">
-                        <span className="text-xs font-bold text-[#0F172A]">
+                      <div className="flex items-center shrink-0 ml-3 gap-3">
+                        <span className="text-[15px] font-bold text-ink">
                           ₹{payment.amount.toLocaleString('en-IN')}
                         </span>
                         <button 
                           onClick={() => alert(`Initiating payment of ₹${payment.amount} for ${payment.name}`)}
-                          className="ml-3 bg-[#0361e2] text-white rounded-lg px-2.5 py-1 text-[10px] font-bold hover:bg-[#0251c0] active:scale-95 transition-all duration-200 cursor-pointer"
+                          className="bg-[#22c55e] text-white rounded-[8px] px-3.5 py-2 text-[13px] font-medium hover:bg-[#16a34a] active:scale-95 transition-all duration-200 cursor-pointer"
                         >
                           Pay
                         </button>
@@ -1184,6 +1186,9 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                 })}
               </div>
             </div>
+
+            {/* Bottom Padding */}
+            <div className="h-12 w-full shrink-0"></div>
 
           </div>
         )}
@@ -1325,22 +1330,22 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
           />
           
           {/* Bottom Sheet Container */}
-          <div className="absolute bottom-0 left-0 right-0 bg-[#FAF8F8] rounded-t-[32px] z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.15)] flex flex-col max-h-[82%] animate-slideUp overflow-hidden border-t border-slate-100">
+          <div className="absolute bottom-0 left-0 right-0 bg-canvas rounded-t-[32px] z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.15)] flex flex-col max-h-[82%] animate-slideUp overflow-hidden border-t border-hairline">
             
             {/* Top Handle and Close Button Row */}
             <div className="p-4 pb-2 flex items-center justify-between shrink-0">
+              <div className="w-9 h-9"></div> {/* Placeholder for flex alignment */}
+              <div className="w-12 h-1 bg-hairline rounded-full"></div> {/* Centered indicator line */}
               <button 
                 onClick={() => setActiveGoalDetails(null)}
-                className="w-9 h-9 rounded-full bg-white border border-slate-100 flex items-center justify-center cursor-pointer shadow-sm hover:scale-95 active:scale-90 transition-all"
+                className="w-9 h-9 rounded-full bg-surface-strong border border-hairline flex items-center justify-center cursor-pointer hover:scale-95 active:scale-90 transition-all"
               >
                 {/* Close X icon */}
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 text-slate-800">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 text-ink">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="w-12 h-1 bg-slate-200 rounded-full mr-9"></div> {/* Centered indicator line */}
-              <div></div> {/* Placeholder for flex alignment */}
             </div>
 
             {/* Title & Header Section */}

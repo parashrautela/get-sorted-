@@ -42,22 +42,23 @@
 }
 
 @theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-display: 'Manrope', sans-serif;
-  --font-outfit: 'Outfit', sans-serif;
-  --font-denton: 'Denton Test', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
+  --font-sans: 'Airbnb Cereal VF', 'Circular', -apple-system, system-ui, sans-serif;
+  --font-display: 'Airbnb Cereal VF', 'Circular', -apple-system, system-ui, sans-serif;
 
-  --color-brand-blue: #0361e2;
-  --color-brand-blue-light: #b1cef6;
-  --color-brand-blue-soft: #e6effc;
-  --color-brand-orange: #ff9500;
-  --color-brand-green: #22c55e;
-  --color-brand-gray: #64748b;
-  --color-brand-dark: #020617;
-  --color-brand-bg: #fafafa;
-  --color-brand-card: #ffffff;
-  --color-brand-border: #e2e8f0;
+  --color-primary: #ff385c;
+  --color-primary-active: #e00b41;
+  --color-ink: #222222;
+  --color-body: #3f3f3f;
+  --color-muted: #6a6a6a;
+  --color-canvas: #ffffff;
+  --color-surface-soft: #f7f7f7;
+  --color-surface-strong: #f2f2f2;
+  --color-hairline: #dddddd;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
 
   --animate-pulse-slow: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-mic-wave: micWave 1.8s ease-in-out infinite;
@@ -75,22 +76,25 @@
 }
 
 :root {
-  /* Figma variables translated to CSS custom properties */
-  --foreground: #020617;
-  --muted-foreground: #64748b;
-  --border: #e2e8f0;
-  --secondary: #f1f5f9;
   --background: #ffffff;
-  --sidebar-background: #fafafa;
-  --red-600: #dc2626;
-  --blue-500: #0361e2;
-  --blue-100: #b1cef6;
-  --blue-50: #e6effc;
-  --colors-orange: #ff9500;
-  --destructive: #22c55e; /* Note: Figma marks the green text/tag as --destructive here */
+  --foreground: #222222;
+  --primary: #ff385c;
+  --primary-active: #e00b41;
+  --muted: #6a6a6a;
+  --border: #dddddd;
   
-  font-family: 'Inter', system-ui, sans-serif;
-  color: #020617;
+  /* Map old brand colors to new Airbnb tokens for immediate visual effect */
+  --color-brand-blue: var(--primary);
+  --color-brand-blue-light: #ffd1da; /* primary-disabled */
+  --color-brand-blue-soft: #f7f7f7; /* surface-soft */
+  --color-brand-dark: var(--foreground);
+  --color-brand-bg: var(--background);
+  --color-brand-card: var(--background);
+  --color-brand-border: var(--border);
+  --color-brand-gray: var(--muted);
+  
+  font-family: 'Airbnb Cereal VF', 'Circular', -apple-system, system-ui, sans-serif;
+  color: var(--foreground);
 }
 
 body {

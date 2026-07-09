@@ -41,6 +41,7 @@ export default function App() {
 
   // Toast notification state
   const [toast, setToast] = useState(null);
+  const [showSplineEmbed, setShowSplineEmbed] = useState(false);
 
   const showToast = (message) => {
     setToast(message);
@@ -82,12 +83,44 @@ export default function App() {
   const isBmwGoalAdded = goals.some(g => g.name === 'BMW 3 Series');
 
   return (
-    <div className="h-screen w-full bg-[#FAF8F8] flex justify-center items-center overflow-hidden">
-      <div className="w-full max-w-[390px] h-full bg-[#FAF8F8] flex flex-col shadow-2xl relative border-x border-slate-100 overflow-hidden">
+    <div className="h-screen w-full bg-white flex justify-center items-center overflow-hidden text-ink">
+      <div className="w-full max-w-[390px] h-full bg-white flex flex-col shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px,rgba(0,0,0,0.1)_0_4px_8px] relative border-x border-hairline overflow-hidden">
         
         {/* Active Screen component */}
-        {!isOnboarded ? (
-          <Onboarding onComplete={() => { setIsOnboarded(true); setActiveTab('home'); }} />
+        {!isOnboarded && !showSplineEmbed ? (
+          <Onboarding onComplete={() => setShowSplineEmbed(true)} />
+        ) : showSplineEmbed && !isOnboarded ? (
+          <div className="relative w-full h-full bg-[#1A1A1A] overflow-hidden flex items-center justify-center">
+            {/* Wrapper to trick Spline into rendering a wider canvas. Using 'zoom' instead of 'transform: scale' preserves pointer event coordinates in webkit. */}
+            <div 
+              style={{ 
+                width: '1000px', 
+                height: '2164px', 
+                zoom: 0.39,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                transformOrigin: 'top left'
+              }}
+            >
+              <iframe 
+                src="https://my.spline.design/interactive3dparallaxscene-QxvE8HyFwxmLVxM4B1SCNGh4/" 
+                frameBorder="0" 
+                style={{ width: '100%', height: '100%' }}
+                title="Interactive 3D Background"
+              ></iframe>
+            </div>
+            
+            {/* Floating Continue Button */}
+            <div className="absolute bottom-10 left-0 w-full px-6 z-20 flex justify-center pointer-events-none">
+              <button 
+                onClick={() => { setShowSplineEmbed(false); setIsOnboarded(true); setActiveTab('home'); }}
+                className="pointer-events-auto bg-white/10 backdrop-blur-xl border border-white/20 text-white text-[15px] font-semibold py-3.5 px-8 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:bg-white/20 transition-all duration-300 active:scale-95"
+              >
+                Continue to Dashboard
+              </button>
+            </div>
+          </div>
         ) : activeTab === 'ask-ai' ? (
           <AiChat 
             onBack={() => setActiveTab('home')} 

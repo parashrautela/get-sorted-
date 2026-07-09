@@ -458,6 +458,23 @@ export default function Onboarding({ onComplete }) {
                 Commitments
               </h3>
 
+              {/* Cash expenses nudge */}
+              <div className="pt-2 pb-2 space-y-3">
+                <p className="font-poppins font-normal text-[13px] text-[#8A8A8A] italic">
+                  People you pay in cash usually hide here. Anything we missed?
+                </p>
+                <div className="flex overflow-x-auto space-x-2 py-1 scrollbar-none snap-x w-full">
+                  {['Maid', 'Cook', 'Driver', 'Parents', 'Society', 'Other'].map((chip, idx) => (
+                    <button 
+                      key={idx}
+                      className="border border-[#0D0D0D] text-[#0D0D0D] px-4 py-1.5 rounded-full text-[13px] font-medium font-poppins hover:bg-slate-100 transition duration-150 cursor-pointer whitespace-nowrap snap-start shrink-0"
+                    >
+                      {chip}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {/* Categorized list */}
               <div className="space-y-4">
                 {[
@@ -515,18 +532,18 @@ export default function Onboarding({ onComplete }) {
                       {/* Category Header Row */}
                       <div 
                         onClick={() => setExpandedCategories(prev => ({ ...prev, [category.id]: !prev[category.id] }))}
-                        className="flex items-center justify-between w-full cursor-pointer py-1.5 select-none"
+                        className="flex items-center justify-between w-full cursor-pointer py-2 select-none"
                       >
-                        <div className="flex items-center space-x-2">
-                          <span className={`w-1.5 h-1.5 rounded-full ${category.dotColor}`} />
-                          <span className="text-[12px] font-medium text-slate-500 font-poppins">
+                        <div className="flex items-center space-x-2.5">
+                          <span className={`w-2 h-2 rounded-full ${category.dotColor}`} />
+                          <span className="text-[14px] font-semibold text-muted">
                             {category.name}
                           </span>
                         </div>
                         
-                        <div className="flex items-center space-x-2 text-slate-800">
-                          <span className="text-[13px] font-semibold font-poppins">₹{category.total}</span>
-                          <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${isExpanded ? 'rotate-185' : ''}`} />
+                        <div className="flex items-center space-x-2 text-ink">
+                          <span className="text-[14px] font-bold">₹{category.total}</span>
+                          <ChevronDown className={`w-4 h-4 text-muted transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
                         </div>
                       </div>
 
@@ -536,24 +553,24 @@ export default function Onboarding({ onComplete }) {
                           {category.items.map((item, index) => (
                             <div 
                               key={index}
-                              className={`bg-white rounded-[12px] p-3 border border-[#EEEEEE] flex items-center justify-between shadow-[0_2px_8px_rgba(0,0,0,0.01)] transition-all duration-500 ease-out transform ${cardsVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                              className={`bg-canvas rounded-[16px] p-4 border border-hairline flex items-center justify-between transition-all duration-500 ease-out transform ${cardsVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                               style={{ transitionDelay: `${index * 50}ms` }}
                             >
                               <div className="flex items-center min-w-0 flex-1">
                                 {/* Left: edit icon */}
-                                <button className="text-[#CCCCCC] hover:text-[#0d0d0d] transition p-1.5 cursor-pointer shrink-0">
-                                  <Edit2 className="w-3.5 h-3.5" />
+                                <button className="text-muted hover:text-ink transition p-1.5 cursor-pointer shrink-0 bg-surface-strong rounded-full mr-3">
+                                  <Edit2 className="w-4 h-4" />
                                 </button>
 
                                 {/* Center content stack */}
-                                <div className="flex flex-col pl-2 min-w-0">
+                                <div className="flex flex-col min-w-0">
                                   <div className="flex items-center space-x-2">
-                                    <span className="font-poppins font-medium text-[14px] text-[#0D0D0D] leading-none shrink-0">{item.merchant}</span>
-                                    <span className="bg-slate-50 text-slate-500 border border-slate-200/60 rounded px-1.5 py-0.5 text-[9px] font-bold font-poppins shrink-0 uppercase tracking-wide leading-none">
+                                    <span className="font-semibold text-[15px] text-ink leading-none shrink-0 tracking-tight">{item.merchant}</span>
+                                    <span className="bg-surface border border-hairline text-muted rounded-[4px] px-1.5 py-0.5 text-[10px] font-bold shrink-0 uppercase tracking-wide leading-none">
                                       {item.source}
                                     </span>
                                   </div>
-                                  <span className="font-poppins text-[10px] text-slate-400 mt-1.5 leading-none">
+                                  <span className="text-[13px] font-medium text-muted mt-1.5 leading-none">
                                     via {item.bank}
                                   </span>
                                 </div>
@@ -561,10 +578,10 @@ export default function Onboarding({ onComplete }) {
 
                               {/* Right: amount & due date */}
                               <div className="flex flex-col items-end shrink-0 ml-3">
-                                <span className="font-poppins font-semibold text-[14.5px] text-slate-800 leading-none tabular-nums">
+                                <span className="font-bold text-[15px] text-ink leading-none tabular-nums">
                                   ₹{item.amount}
                                 </span>
-                                <span className="font-poppins text-[10px] text-[#8A8A8A] mt-1.5 leading-none">
+                                <span className="text-[12px] font-medium text-muted mt-1.5 leading-none">
                                   Due {item.due}
                                 </span>
                               </div>
@@ -577,22 +594,7 @@ export default function Onboarding({ onComplete }) {
                 })}
               </div>
 
-              {/* Cash expenses nudge */}
-              <div className="pt-4 space-y-3">
-                <p className="font-poppins font-normal text-[13px] text-[#8A8A8A] italic">
-                  People you pay in cash usually hide here. Anything we missed?
-                </p>
-                <div className="flex overflow-x-auto space-x-2 py-1 scrollbar-none snap-x w-full">
-                  {['Maid', 'Cook', 'Driver', 'Parents', 'Society', 'Other'].map((chip, idx) => (
-                    <button 
-                      key={idx}
-                      className="border border-[#0D0D0D] text-[#0D0D0D] px-4 py-1.5 rounded-full text-[13px] font-medium font-poppins hover:bg-slate-100 transition duration-150 cursor-pointer whitespace-nowrap snap-start shrink-0"
-                    >
-                      {chip}
-                    </button>
-                  ))}
-                </div>
-              </div>
+
 
             </div>
 
@@ -620,8 +622,8 @@ export default function Onboarding({ onComplete }) {
               <div className="h-full bg-[#07995C] rounded-r-full" style={{ width: '100%' }} />
             </div>
 
-            {/* Top Zone — Score Visual (60% of screen) */}
-            <div className="flex-[0_0_60%] flex flex-col items-center justify-center relative select-none">
+            {/* Top Zone — Score Visual */}
+            <div className="flex-1 min-h-0 flex flex-col items-center justify-center relative select-none shrink pb-4">
 
               {/* Glow + score number — fixed-size box so both share one center */}
               <div className="relative w-[260px] h-[260px] shrink-0 flex items-center justify-center">
@@ -664,9 +666,9 @@ export default function Onboarding({ onComplete }) {
 
             </div>
 
-            {/* Bottom Zone — Summary Card (40%) */}
+            {/* Bottom Zone — Summary Card */}
             <div
-              className="flex-[0_0_40%] flex flex-col"
+              className="mt-auto h-auto min-h-[40%] flex flex-col shrink-0"
               style={{
                 transform: cardVisible ? 'translateY(0)' : 'translateY(40px)',
                 opacity: cardVisible ? 1 : 0,
@@ -730,7 +732,7 @@ export default function Onboarding({ onComplete }) {
 
                 <button
                   onClick={onComplete}
-                  className="relative z-10 w-full py-4 rounded-full font-poppins font-bold text-[18px] text-white text-center active:scale-[0.98] transition cursor-pointer bg-[#101614] shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
+                  className="relative z-10 w-full py-4 mt-6 rounded-full font-poppins font-bold text-[18px] text-white text-center active:scale-[0.98] transition cursor-pointer bg-[#101614] shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
                 >
                   Continue
                 </button>

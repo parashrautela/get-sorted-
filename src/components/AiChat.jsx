@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, MessageSquarePlus, ChevronDown, Car, Mic, Send, Keyboard, X } from 'lucide-react';
+import InsightChart from './InsightChart';
 
 const JuspayAiLogo = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" fill="none" className={className}>
@@ -97,9 +98,11 @@ export default function AiChat({
                 <span className="font-semibold text-slate-800">Parash</span>, your last 7 days had a very committed relationship with Starbucks: 8 trips for <span className="font-semibold text-slate-800">₹5,240</span> total.
               </p>
               
-              <p className="text-[15px] font-medium leading-relaxed text-slate-600 font-poppins">
+              <p className="text-[15px] font-medium leading-relaxed text-slate-600 font-poppins mb-6">
                 I can also see you’ve got recurring income set up, but no upcoming bills tracked right now. Do you want to look at your spending or set up bills?
               </p>
+
+
             </div>
           </div>
         )}
@@ -134,63 +137,20 @@ export default function AiChat({
                 </p>
 
                 {/* Savings Trend Line Chart widget */}
-                <div className="bg-slate-50 border border-slate-100 rounded-xl p-3.5 space-y-3">
-                  <div className="flex items-center justify-between opacity-80">
-                    <div className="flex items-center space-x-1.5">
-                      <span className="text-[14px] font-semibold text-slate-800">Savings Trend</span>
-                      <span className="flex items-center px-1.5 py-0.5 rounded-full text-[12px] bg-emerald-50 border border-emerald-500/20 text-emerald-500 font-semibold space-x-0.5">
-                        <span className="inline-block transform rotate-180 text-[8px]">▼</span>
-                        <span>18%</span>
-                      </span>
-                    </div>
-
-                    <div className="bg-white border border-slate-100 rounded-full px-2 py-1 flex items-center space-x-1 shadow-sm">
-                      <span className="text-[12px] text-slate-500 font-medium">Last 30 days</span>
-                      <ChevronDown className="w-2.5 h-2.5 text-slate-500 opacity-60" />
-                    </div>
-                  </div>
-
-                  {/* Gorgeous Custom SVG Savings Trend Chart */}
-                  <div className="relative w-full h-[120px] pt-2">
-                    <svg viewBox="0 0 320 100" className="w-full h-[90px] overflow-visible">
-                      <defs>
-                        <linearGradient id="chart-glow" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#10b981" stopOpacity="0.25" />
-                          <stop offset="100%" stopColor="#10b981" stopOpacity="0.0" />
-                        </linearGradient>
-                      </defs>
-                      {/* Area Fill */}
-                      <path 
-                        d="M 0 60 C 20 58, 40 50, 60 52 C 80 54, 100 48, 120 44 C 140 40, 160 48, 180 46 C 200 44, 220 38, 240 34 C 260 30, 280 26, 300 24 C 310 23, 320 22, 320 22 L 320 100 L 0 100 Z" 
-                        fill="url(#chart-glow)" 
-                      />
-                      {/* Grid Lines */}
-                      <line x1="0" y1="20" x2="320" y2="20" stroke="#f1f5f9" strokeDasharray="3 3" />
-                      <line x1="0" y1="50" x2="320" y2="50" stroke="#f1f5f9" strokeDasharray="3 3" />
-                      <line x1="0" y1="80" x2="320" y2="80" stroke="#f1f5f9" strokeDasharray="3 3" />
-                      {/* Main Trend Line */}
-                      <path 
-                        d="M 0 60 C 20 58, 40 50, 60 52 C 80 54, 100 48, 120 44 C 140 40, 160 48, 180 46 C 200 44, 220 38, 240 34 C 260 30, 280 26, 300 24 C 310 23, 320 22, 320 22" 
-                        fill="none" 
-                        stroke="#10b981" 
-                        strokeWidth="3.5" 
-                        strokeLinecap="round"
-                        className="animate-[dash_1.5s_ease-in-out_forwards]"
-                      />
-                      {/* Dot pointer indicator */}
-                      <circle cx="320" cy="22" r="4.5" fill="#10b981" stroke="#ffffff" strokeWidth="2" />
-                    </svg>
-                    
-                    {/* X-axis labels */}
-                    <div className="flex justify-between text-[12px] text-slate-400 font-medium px-1 mt-1">
-                      <span>May 1</span>
-                      <span>May 8</span>
-                      <span>May 15</span>
-                      <span>May 22</span>
-                      <span>Jun 1</span>
-                    </div>
-                  </div>
-                </div>
+                <InsightChart 
+                  data={[
+                    { name: 'Sep 3', current: 20, previous: 50 },
+                    { name: 'Sep 4', current: 30, previous: 70 },
+                    { name: 'Sep 5', current: 95, previous: 25 },
+                    { name: 'Sep 6', current: 70, previous: 55 },
+                    { name: 'Sep 7', current: 20, previous: 40 },
+                  ]}
+                  lines={[
+                    { dataKey: 'current', name: 'Savings', color: '#8884d8' },
+                    { dataKey: 'previous', name: 'Spending', color: '#ffc658' }
+                  ]}
+                  height={180}
+                />
 
                 <p className="text-[14px] text-slate-500 font-medium leading-normal">
                   Want me to <span className="text-slate-400">help optimize your spending categories or build a smarter savings plan?</span>
@@ -562,6 +522,27 @@ export default function AiChat({
                 <X className="w-6 h-6 text-slate-500" />
               </button>
             </div>
+          </div>
+        )}
+
+        {/* Suggestion Chips Above Input */}
+        {activeScenario !== 'voice-typing' && inputText.trim() === '' && (
+          <div className="flex gap-2 mb-3 overflow-x-auto scrollbar-none px-1 pb-1 w-full snap-x">
+            {[
+              { icon: "👋", text: "Welcome" },
+              { icon: "🎙️", text: "Voice Trend" },
+              { icon: "🔥", text: "Roast" },
+              { icon: "💡", text: "Tips" }
+            ].map((suggestion, idx) => (
+              <button 
+                key={idx}
+                onClick={() => alert(`Selected: ${suggestion.text}`)}
+                className="whitespace-nowrap bg-white border border-slate-200 text-slate-700 rounded-full px-4 py-2 text-[13px] font-medium shadow-sm hover:bg-slate-50 transition-colors cursor-pointer flex items-center space-x-1.5 shrink-0 snap-start active:scale-95"
+              >
+                <span>{suggestion.icon}</span>
+                <span>{suggestion.text}</span>
+              </button>
+            ))}
           </div>
         )}
 
