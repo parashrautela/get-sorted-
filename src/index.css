@@ -44,6 +44,8 @@
 @theme {
   --font-sans: 'Airbnb Cereal VF', 'Circular', -apple-system, system-ui, sans-serif;
   --font-display: 'Airbnb Cereal VF', 'Circular', -apple-system, system-ui, sans-serif;
+  --font-denton: 'Denton Test', Georgia, serif;
+  --font-poppins: 'Poppins', -apple-system, system-ui, sans-serif;
 
   --color-primary: #ff385c;
   --color-primary-active: #e00b41;
@@ -157,6 +159,73 @@ body {
   to {
     transform: translateY(0);
   }
+}
+
+/* Chat message entrance */
+@keyframes msgIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-msgIn {
+  animation: msgIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Typing indicator dots */
+@keyframes typingDot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+.typing-dot {
+  animation: typingDot 1.2s ease-in-out infinite;
+}
+
+/* Voice mode orb */
+@keyframes orbBreathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+.animate-orb {
+  animation: orbBreathe 2.2s ease-in-out infinite;
+}
+@keyframes orbRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+.animate-orb-ring {
+  animation: orbRing 2s ease-out infinite;
+}
+
+/* Hide scrollbars inside chat surfaces */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 @keyframes fadeIn {
   from {

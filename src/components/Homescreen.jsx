@@ -31,10 +31,12 @@ import {
   ChevronLeft,
   Check,
   Film,
-  X
+  X,
+  ChevronDown
 } from 'lucide-react';
 import img16400 from '../assets/16,400.png';
 import profileIcon from '../assets/profile icon.png';
+import Profile from './Profile';
 
 const JuspayAiLogo = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" fill="none" className={className}>
@@ -174,7 +176,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   Bank balance
                 </span>
                 <div className="mt-3">
-                  <span className="text-[20px] font-denton font-semibold text-slate-900 leading-none">
+                  <span className="text-[20px] font-poppins font-semibold text-slate-900 leading-none">
                     ₹54,500
                   </span>
                   <span className="text-[12px] font-medium text-slate-500 font-poppins block mt-1.5 leading-none">
@@ -189,7 +191,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   Net worth
                 </span>
                 <div className="mt-3">
-                  <span className="text-[20px] font-denton font-semibold text-slate-900 leading-none">
+                  <span className="text-[20px] font-poppins font-semibold text-slate-900 leading-none">
                     ₹1,09,600
                   </span>
                   <span className="text-[12px] font-medium text-slate-500 font-poppins block mt-1.5 leading-none">
@@ -204,7 +206,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   Invested
                 </span>
                 <div className="mt-3">
-                  <span className="text-[20px] font-denton font-semibold text-slate-900 leading-none">
+                  <span className="text-[20px] font-poppins font-semibold text-slate-900 leading-none">
                     ₹2,47,500
                   </span>
                   <span className="text-[12px] font-medium text-slate-500 font-poppins block mt-1.5 leading-none">
@@ -220,7 +222,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                 </span>
                 <div className="mt-3 flex items-baseline justify-between">
                   <div className="flex flex-col">
-                    <span className="text-[20px] font-denton font-semibold text-slate-900 leading-none">
+                    <span className="text-[20px] font-poppins font-semibold text-slate-900 leading-none">
                       726
                     </span>
                     <span className="text-[12px] font-bold text-emerald-600 font-poppins block mt-1.5 leading-none">
@@ -259,7 +261,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                       </span>
                     </div>
                   </div>
-                  <span className="text-[14px] font-semibold text-slate-900 font-denton tracking-tight">
+                  <span className="text-[14px] font-semibold text-slate-900 font-poppins tracking-tight">
                     ₹12,500
                   </span>
                 </div>
@@ -279,7 +281,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                       </span>
                     </div>
                   </div>
-                  <span className="text-[14px] font-semibold text-slate-900 font-denton tracking-tight">
+                  <span className="text-[14px] font-semibold text-slate-900 font-poppins tracking-tight">
                     ₹42,000
                   </span>
                 </div>
@@ -294,7 +296,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   Term life
                 </span>
                 <div className="mt-3">
-                  <span className="text-[20px] font-denton font-semibold text-slate-900 leading-none">
+                  <span className="text-[20px] font-poppins font-semibold text-slate-900 leading-none">
                     ₹75L
                   </span>
                   <span className="text-[12px] font-medium text-slate-500 font-poppins block mt-1.5 leading-none">
@@ -309,7 +311,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   Health cover
                 </span>
                 <div className="mt-3">
-                  <span className="text-[20px] font-denton font-semibold text-slate-900 leading-none">
+                  <span className="text-[20px] font-poppins font-semibold text-slate-900 leading-none">
                     ₹10L
                   </span>
                   <span className="text-[12px] font-medium text-slate-500 font-poppins block mt-1.5 leading-none">
@@ -345,7 +347,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   </span>
 
                   <div className="mt-3 flex items-baseline">
-                    <span className="text-[28px] font-denton font-semibold text-slate-900 leading-none">
+                    <span className="text-[28px] font-poppins font-semibold text-slate-900 leading-none">
                       ₹42,000
                     </span>
                     <span className="text-[12px] text-slate-500 font-poppins ml-2 font-normal">
@@ -367,7 +369,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                         <span className="text-[11px] font-semibold text-slate-600 font-poppins block leading-none">
                           Stays idle • 3% a year
                         </span>
-                        <span className="text-[16px] font-semibold text-slate-900 font-denton block mt-2 leading-none">
+                        <span className="text-[16px] font-semibold text-slate-900 font-poppins block mt-2 leading-none">
                           ₹30,900
                         </span>
                       </div>
@@ -382,7 +384,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                         <span className="text-[11px] font-semibold text-emerald-700 font-poppins block leading-none">
                           In liquid fund • 7% a year
                         </span>
-                        <span className="text-[16px] font-semibold text-emerald-900 font-denton block mt-2 leading-none">
+                        <span className="text-[16px] font-semibold text-emerald-900 font-poppins block mt-2 leading-none">
                           ₹32,100
                         </span>
                       </div>
@@ -463,7 +465,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                       </span>
                     </div>
                     <div className="flex items-center space-x-1 text-slate-800 shrink-0">
-                      <span className="text-sm font-semibold font-denton">₹5,240</span>
+                      <span className="text-sm font-semibold font-poppins">₹5,240</span>
                       <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
                     </div>
                   </div>
@@ -533,7 +535,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                       </div>
                       <div className="flex items-center space-x-2 shrink-0">
                         <div className="flex flex-col items-end">
-                          <span className="text-xs font-semibold text-[#0F172A] font-denton">
+                          <span className="text-xs font-semibold text-[#0F172A] font-poppins">
                             ₹1,050
                           </span>
                           <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-1 py-0.2 rounded mt-1">
@@ -556,7 +558,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                       </div>
                       <div className="flex items-center space-x-2 shrink-0">
                         <div className="flex flex-col items-end">
-                          <span className="text-xs font-semibold text-[#0F172A] font-denton">
+                          <span className="text-xs font-semibold text-[#0F172A] font-poppins">
                             ₹1,150
                           </span>
                           <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-1 py-0.2 rounded mt-1">
@@ -574,7 +576,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                       <span className="text-[9px] font-bold text-[#64748B] uppercase tracking-wider leading-none">
                         Total This Month
                       </span>
-                      <span className="text-sm font-semibold text-[#0F172A] font-denton mt-2 leading-none">
+                      <span className="text-sm font-semibold text-[#0F172A] font-poppins mt-2 leading-none">
                         ₹5,240
                       </span>
                     </div>
@@ -582,7 +584,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                       <span className="text-[9px] font-bold text-[#64748B] uppercase tracking-wider leading-none">
                         Total Daily Cash
                       </span>
-                      <span className="text-sm font-semibold text-emerald-600 font-denton mt-2 leading-none">
+                      <span className="text-sm font-semibold text-emerald-600 font-poppins mt-2 leading-none">
                         ₹104.80
                       </span>
                     </div>
@@ -595,11 +597,33 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
             /* Default Spending Analysis view */
             <div className="flex-1 px-4 pt-2 pb-10 z-10 space-y-5 scrollbar-none animate-fadeIn">
               
-              {/* Center-aligned Date Title */}
-              <div className="flex flex-col items-center justify-center mt-3 mb-1">
-                <span className="text-[24px] font-bold text-[#0F172A] font-poppins leading-none tracking-tight">
-                  July 2026
-                </span>
+              {/* NEW: Total Spend Summary Card */}
+              <div className="bg-white rounded-[24px] p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex justify-between items-end mb-2 animate-fadeIn">
+                <div className="flex flex-col">
+                  <span className="text-[12px] text-slate-500 font-medium font-poppins leading-none mb-1.5">Total Spend</span>
+                  <span className="text-[28px] font-bold text-slate-900 font-poppins leading-none tracking-tight">₹46,150</span>
+                  <div className="flex items-center space-x-1 mt-2.5">
+                    <span className="text-[#07995C] text-[10px] font-bold">▲</span>
+                    <span className="text-[10px] font-semibold text-slate-500 font-poppins">4.9% From last month</span>
+                  </div>
+                </div>
+                {/* Inline Bar Chart */}
+                <div className="flex items-end space-x-2 h-14 pb-1">
+                  <div className="w-4 h-6 bg-[#E6F4EA] rounded-t-full transition-all"></div>
+                  <div className="w-4 h-10 bg-[#E6F4EA] rounded-t-full transition-all"></div>
+                  <div className="w-4 h-14 bg-[#07995C] rounded-t-full shadow-sm transition-all scale-105"></div>
+                  <div className="w-4 h-8 bg-[#E6F4EA] rounded-t-full transition-all"></div>
+                </div>
+              </div>
+
+              {/* Date Title Pill */}
+              <div className="flex justify-start mt-2 mb-4 pl-1">
+                <button className="flex items-center space-x-1.5 bg-slate-100/80 hover:bg-slate-200/80 transition px-4 py-2.5 rounded-full cursor-pointer active:scale-95">
+                  <span className="text-[22px] font-bold text-slate-900 font-poppins leading-none tracking-tight">
+                    Jul 2026
+                  </span>
+                  <ChevronDown className="w-5 h-5 text-slate-500" />
+                </button>
               </div>
 
               {selectedCalendarDay !== null ? (
@@ -708,7 +732,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                             </div>
 
                             <div className="flex items-center shrink-0 ml-3">
-                              <span className="text-sm font-bold text-slate-800 font-denton mr-2.5">
+                              <span className="text-sm font-bold text-slate-800 font-poppins mr-2.5">
                                   ₹{payment.amount.toLocaleString('en-IN')}
                               </span>
                               <div className="w-5 h-5 rounded-full bg-[#07995C]/10 text-[#07995C] flex items-center justify-center">
@@ -754,7 +778,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                                 </div>
                               </div>
 
-                              <span className="text-xs font-semibold text-slate-700 font-denton shrink-0 ml-3">
+                              <span className="text-xs font-semibold text-slate-700 font-poppins shrink-0 ml-3">
                                   ₹{payment.amount.toLocaleString('en-IN')}
                               </span>
                             </div>
@@ -770,10 +794,10 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                 /* ---------------------------------------------------- */
                 <>
                   {/* Calendar Card */}
-                  <div className="bg-white rounded-3xl p-5 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.02)] flex flex-col space-y-5 animate-fadeIn">
+                  <div className="bg-white rounded-[24px] p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex flex-col space-y-6 animate-fadeIn">
                     
                     {/* Calendar Header Weekdays */}
-                    <div className="grid grid-cols-7 gap-1 text-center font-poppins text-[10px] font-bold text-slate-400 tracking-wider mb-2">
+                    <div className="grid grid-cols-7 gap-1 text-center font-poppins text-[11px] font-medium text-slate-400 tracking-wider mb-2">
                       {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, idx) => (
                         <span key={idx}>{day}</span>
                       ))}
@@ -819,21 +843,32 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                         { day: 31 }
                       ].map((item, idx) => {
                         const isCurrent = item.day === 15;
+                        const isHighSpend = item.amount && item.amount.includes('k') && parseFloat(item.amount) >= 15;
+                        const isMedSpend = item.amount && item.amount.includes('k') && parseFloat(item.amount) >= 5 && parseFloat(item.amount) < 15;
+                        const isLowSpend = item.amount && ((item.amount.includes('k') && parseFloat(item.amount) < 5) || (!item.amount.includes('k') && parseFloat(item.amount) > 0));
+
+                        let bgClass = 'hover:bg-slate-50 hover:scale-105 active:scale-95';
+                        if (isCurrent) {
+                          bgClass = 'bg-[#07995C] shadow-md scale-105';
+                        } else if (isHighSpend) {
+                          bgClass = 'bg-[#07995C]/20 hover:bg-[#07995C]/30 hover:scale-105 active:scale-95';
+                        } else if (isMedSpend) {
+                          bgClass = 'bg-[#07995C]/10 hover:bg-[#07995C]/20 hover:scale-105 active:scale-95';
+                        } else if (isLowSpend) {
+                          bgClass = 'bg-[#07995C]/5 hover:bg-[#07995C]/10 hover:scale-105 active:scale-95';
+                        }
+
                         return (
                           <div 
                             key={idx}
                             onClick={() => setSelectedCalendarDay(item.day)}
-                            className={`w-10 h-10 rounded-xl flex flex-col items-center justify-center relative transition-all duration-200 cursor-pointer ${
-                              isCurrent 
-                                ? 'border-[2px] border-[#07995C] bg-[#E6F4EA]/45 font-bold shadow-sm scale-105' 
-                                : 'hover:bg-slate-50 hover:scale-105 active:scale-95'
-                            }`}
+                            className={`w-10 h-11 rounded-xl flex flex-col items-center justify-center relative transition-all duration-200 cursor-pointer ${bgClass}`}
                           >
-                            <span className={`text-[12px] font-bold ${isCurrent ? 'text-[#07995C]' : 'text-slate-800'}`}>
+                            <span className={`text-[14px] font-bold ${isCurrent ? 'text-white' : 'text-slate-900'}`}>
                               {item.day}
                             </span>
                             {item.amount && (
-                              <span className={`text-[7px] font-extrabold mt-0.5 leading-none ${isCurrent ? 'text-[#07995C]' : 'text-slate-400'}`}>
+                              <span className={`text-[9px] font-semibold mt-0.5 leading-none ${isCurrent ? 'text-white/90' : 'text-[#849A8E]'}`}>
                                 {item.amount}
                               </span>
                             )}
@@ -843,34 +878,82 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                     </div>
                   </div>
 
+                  {/* NEW: Daily Spend Trend Line Chart Card */}
+                  <div className="bg-white rounded-[24px] p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex flex-col mt-6 animate-fadeIn">
+                    <span className="text-[12px] text-slate-500 font-medium font-poppins leading-none mb-8">Daily Spend Trend</span>
+                    <div className="relative w-full h-28">
+                      <svg viewBox="0 0 100 40" className="w-full h-full overflow-visible" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#07995C" stopOpacity="0.25" />
+                            <stop offset="100%" stopColor="#07995C" stopOpacity="0" />
+                          </linearGradient>
+                        </defs>
+                        {/* Gradient Fill under path */}
+                        <path 
+                          d="M0,35 C10,35 15,5 25,5 C35,5 40,25 50,25 C60,25 65,35 75,35 C85,35 90,15 100,15 L100,40 L0,40 Z"
+                          fill="url(#trendGradient)" 
+                        />
+                        {/* Smooth Bezier curve path */}
+                        <path 
+                          d="M0,35 C10,35 15,5 25,5 C35,5 40,25 50,25 C60,25 65,35 75,35 C85,35 90,15 100,15"
+                          fill="none" 
+                          stroke="#07995C" 
+                          strokeWidth="2.5" 
+                          vectorEffect="non-scaling-stroke"
+                        />
+                        {/* Highlight Dot at roughly 50% X (representing Day 15) */}
+                        <circle cx="50" cy="25" r="4.5" fill="#07995C" stroke="white" strokeWidth="2.5" vectorEffect="non-scaling-stroke" className="drop-shadow-sm" />
+                      </svg>
+                      {/* Floating Tooltip Pill */}
+                      <div className="absolute top-[35%] left-[50%] -translate-x-1/2 -translate-y-full mb-2">
+                        <div className="bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] rounded-full px-3.5 py-1.5 border border-slate-100 flex items-center justify-center">
+                          <span className="text-[12px] font-bold text-slate-900 font-poppins leading-none tracking-wide">₹3,000</span>
+                        </div>
+                      </div>
+                    </div>
+                    {/* X-Axis labels */}
+                    <div className="flex justify-between text-[10px] text-slate-400 font-poppins font-medium mt-3 px-1">
+                      <span>Week 1</span>
+                      <span>Week 2</span>
+                      <span className="text-[#07995C] font-bold">Week 3</span>
+                      <span>Week 4</span>
+                    </div>
+                  </div>
+
                   {/* Possibly Recurring Title and Subtitle */}
-                  <div className="flex flex-col space-y-1.5 pl-1 pt-1.5 animate-fadeIn">
-                    <span className="text-[10px] font-bold tracking-widest text-[#64748B] uppercase font-poppins">
+                  <div className="flex flex-col space-y-2 pl-2 pt-8 animate-fadeIn">
+                    <span className="text-[11px] font-semibold tracking-widest text-slate-500 uppercase font-poppins">
                       POSSIBLY RECURRING • {recurringCandidates.length}
                     </span>
-                    <span className="text-[11px] text-slate-500 font-poppins leading-relaxed">
+                    <span className="text-[12px] text-slate-400 font-medium font-poppins leading-relaxed">
                       We spotted these hitting your account more than once. Tap to add them as recurring.
                     </span>
                   </div>
 
-                  {/* Candidates Cards */}
-                  <div className="space-y-3 animate-fadeIn">
-                    {recurringCandidates.map((candidate) => (
+                  {/* Candidates List (No Cards) */}
+                  <div className="flex flex-col animate-fadeIn px-2 pb-6">
+                    {recurringCandidates.map((candidate, idx) => (
                       <div 
                         key={candidate.id}
-                        className="bg-white rounded-2xl p-4 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex items-center justify-between interactive-card transition-all duration-300"
+                        className={`py-4 flex items-center justify-between group transition-all duration-300 ${idx !== 0 ? 'border-t border-slate-100/50' : ''}`}
                       >
-                        <div className="flex flex-col min-w-0">
-                          <span className="text-xs font-bold text-slate-800 font-poppins leading-none">
-                            {candidate.name}
-                          </span>
-                          <span className="text-[9px] text-slate-500 font-poppins mt-1.5 leading-none">
-                            {candidate.info}
-                          </span>
+                        {/* Left side: Dot + Name + Info */}
+                        <div className="flex items-start min-w-0">
+                          <div className="w-2 h-2 rounded-full bg-[#07995C] mt-1.5 shrink-0"></div>
+                          <div className="flex flex-col ml-3 min-w-0">
+                            <span className="text-[14px] font-bold text-slate-900 font-poppins leading-none">
+                              {candidate.name}
+                            </span>
+                            <span className="text-[11px] text-slate-500 font-medium font-poppins mt-1.5 leading-none truncate">
+                              {candidate.info}
+                            </span>
+                          </div>
                         </div>
 
-                        <div className="flex items-center shrink-0 ml-3">
-                          <span className="text-xs font-bold text-slate-800 font-denton mr-3">
+                        {/* Right side: Amount + CTA */}
+                        <div className="flex flex-col items-end shrink-0 ml-3 space-y-2">
+                          <span className="text-[16px] font-bold text-slate-900 font-poppins leading-none">
                             ₹{candidate.amount.toLocaleString('en-IN')}
                           </span>
                           <button 
@@ -879,7 +962,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                               alert(`Added ${candidate.name} (₹${candidate.amount}) to recurring payments!`);
                               setRecurringCandidates(prev => prev.filter(c => c.id !== candidate.id));
                             }}
-                            className="bg-[#E6F4EA] text-[#07995C] border border-[#07995C]/20 hover:bg-[#D4EDDA] rounded-lg px-2.5 py-1.5 text-[10px] font-bold active:scale-95 transition-all cursor-pointer whitespace-nowrap"
+                            className="bg-[#E6F4EA] text-[#07995C] hover:bg-[#D4EDDA] rounded-full px-3 py-1 text-[9px] font-bold uppercase tracking-wider active:scale-95 transition-all cursor-pointer whitespace-nowrap opacity-80 hover:opacity-100"
                           >
                             add recurring →
                           </button>
@@ -887,8 +970,8 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                       </div>
                     ))}
                     {recurringCandidates.length === 0 && (
-                      <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] text-center font-poppins">
-                        <span className="text-xs text-slate-400">All recurring transactions successfully tracked!</span>
+                      <div className="py-8 text-center font-poppins">
+                        <span className="text-[13px] font-medium text-slate-400">All recurring transactions successfully tracked!</span>
                       </div>
                     )}
                   </div>
@@ -949,7 +1032,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   </div>
 
                   <div className="mt-4">
-                    <span className="text-[32px] font-denton font-semibold text-[#181111] leading-none tracking-tight block">
+                    <span className="text-[32px] font-poppins font-semibold text-[#181111] leading-none tracking-tight block">
                       ₹{budgetSpent}
                     </span>
                     <span className="text-[13px] text-[#6B7280] font-poppins font-normal mt-1.5 block">
@@ -999,7 +1082,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                     <ChevronRight className="w-3.5 h-3.5 text-[#9CA3AF]" strokeWidth={2} />
                   </div>
                   <div className="flex flex-col mt-3">
-                    <span className="text-[28px] font-denton font-semibold text-[#181111] leading-none tracking-tight">
+                    <span className="text-[28px] font-poppins font-semibold text-[#181111] leading-none tracking-tight">
                       ₹{monthlySavings}
                     </span>
                     <div className="flex items-center space-x-1.5 mt-2.5">
@@ -1410,7 +1493,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                     <span className="text-[8px] font-bold tracking-wider text-[#64748B] uppercase font-poppins">
                       Card Balance
                     </span>
-                    <span className="text-xl font-denton font-semibold text-[#0F172A] mt-2 block truncate max-w-full">
+                    <span className="text-xl font-poppins font-semibold text-[#0F172A] mt-2 block truncate max-w-full">
                       ₹{activeGoalDetails.saved.toLocaleString('en-IN')}
                     </span>
                     <span className="text-[8px] font-bold text-[#94A3B8] font-poppins mt-2.5">
@@ -1462,7 +1545,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   <span className="text-[8px] font-bold text-[#64748B] uppercase tracking-wider font-poppins leading-none">
                     Total saved
                   </span>
-                  <span className="text-sm font-semibold text-[#0F172A] font-denton mt-2 leading-none">
+                  <span className="text-sm font-semibold text-[#0F172A] font-poppins mt-2 leading-none">
                     ₹{Math.round(activeGoalDetails.saved * 0.92).toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -1470,7 +1553,7 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
                   <span className="text-[8px] font-bold text-[#64748B] uppercase tracking-wider font-poppins leading-none">
                     Interest Yield
                   </span>
-                  <span className="text-sm font-semibold text-emerald-600 font-denton mt-2 leading-none">
+                  <span className="text-sm font-semibold text-emerald-600 font-poppins mt-2 leading-none">
                     +₹{Math.round(activeGoalDetails.saved * 0.08).toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -1501,200 +1584,15 @@ export default function Homescreen({ onNavigate, activeTab, goals, savingsPlan }
         </>
       )}
 
-      {/* Profile Overlay Screen */}
+      {/* Profile Page (full-screen) */}
       {showProfileOverlay && (
-        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex flex-col justify-end animate-fadeIn">
-          {/* Overlay dismiss click */}
-          <div className="absolute inset-0 z-0" onClick={() => setShowProfileOverlay(false)} />
-          
-          {/* Bottom Sheet Card */}
-          <div className="relative z-10 bg-[#FAF8F8] rounded-t-[32px] w-full max-h-[92%] flex flex-col shadow-[0_-10px_30px_rgba(0,0,0,0.08)] animate-slide-up overflow-hidden pb-8">
-            
-            {/* Header Row */}
-            <div className="px-6 pt-6 pb-4 flex items-center justify-between border-b border-slate-100 bg-white">
-              <span className="text-xs font-extrabold tracking-widest text-slate-400 uppercase font-poppins">
-                PROFILE
-              </span>
-              <button 
-                onClick={() => setShowProfileOverlay(false)}
-                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition active:scale-90 cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Scrollable Content */}
-            <div className="flex-1 overflow-y-auto px-6 py-5 space-y-6 scrollbar-none">
-              
-              {/* Shubham Details Card */}
-              <div className="bg-white rounded-3xl p-5 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.01)] flex items-center space-x-4">
-                {/* Avatar badge */}
-                <div className="w-16 h-16 rounded-full bg-[#E6F4EA] border border-[#07995C]/20 text-[#07995C] flex items-center justify-center font-denton text-3xl font-bold select-none shrink-0 shadow-inner">
-                  S
-                </div>
-                <div className="flex flex-col min-w-0">
-                  <span className="text-[22px] font-bold text-slate-800 font-denton leading-none">
-                    Shubham
-                  </span>
-                  <span className="text-xs font-semibold text-slate-400 font-poppins mt-2 leading-none">
-                    +91 99999 99999
-                  </span>
-                  
-                  {/* Finding your feet Month 2 badge */}
-                  <div className="mt-3.5 inline-flex items-center space-x-1.5 self-start px-3 py-1 rounded-full border border-[#07995C]/20 bg-[#E6F4EA]/45">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#07995C]" />
-                    <span className="text-[9.5px] font-bold text-[#07995C] font-poppins">
-                      Finding your feet · month 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Privacy Section */}
-              <div className="space-y-3">
-                <span className="text-[9.5px] font-bold tracking-wider text-slate-400 uppercase font-poppins pl-1">
-                  PRIVACY
-                </span>
-                <div className="bg-white rounded-2xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.01)] divide-y divide-slate-50 overflow-hidden">
-                  
-                  {/* Hide amounts (Linked to balanceVisible state) */}
-                  <div className="p-4 flex items-center justify-between">
-                    <div className="flex flex-col min-w-0 pr-4">
-                      <span className="text-xs font-bold text-slate-800 font-poppins leading-none">
-                        Hide amounts
-                      </span>
-                      <span className="text-[9px] text-slate-400 font-poppins mt-1.5 leading-normal">
-                        Masks balances across Home and Financial health
-                      </span>
-                    </div>
-                    <button 
-                      onClick={() => setBalanceVisible(!balanceVisible)}
-                      className={`w-11 h-6 rounded-full p-0.5 transition-colors duration-200 focus:outline-none shrink-0 cursor-pointer ${
-                        !balanceVisible ? 'bg-[#07995C]' : 'bg-slate-200'
-                      }`}
-                    >
-                      <div className={`bg-white w-5 h-5 rounded-full shadow-md transform transition-transform duration-200 ${
-                        !balanceVisible ? 'translate-x-5' : 'translate-x-0'
-                      }`} />
-                    </button>
-                  </div>
-
-                  {/* App lock */}
-                  <div className="p-4 flex items-center justify-between">
-                    <div className="flex flex-col min-w-0">
-                      <span className="text-xs font-bold text-slate-800 font-poppins leading-none">
-                        App lock
-                      </span>
-                      <span className="text-[9px] text-slate-400 font-poppins mt-1.5 leading-none">
-                        Face ID on open
-                      </span>
-                    </div>
-                    <span className="text-[10px] font-bold text-slate-400 font-poppins shrink-0 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-md uppercase tracking-wider">
-                      Soon
-                    </span>
-                  </div>
-
-                </div>
-              </div>
-
-              {/* Linked Data Section */}
-              <div className="space-y-3">
-                <span className="text-[9.5px] font-bold tracking-wider text-slate-400 uppercase font-poppins pl-1">
-                  LINKED DATA
-                </span>
-                <div className="bg-white rounded-2xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.01)] divide-y divide-slate-50 overflow-hidden">
-                  
-                  {/* Bank accounts */}
-                  <div className="p-4 flex items-center justify-between">
-                    <div className="flex flex-col min-w-0 pr-4">
-                      <span className="text-xs font-bold text-slate-800 font-poppins leading-none">
-                        Bank accounts
-                      </span>
-                      <span className="text-[9px] text-slate-400 font-poppins mt-1.5 leading-normal">
-                        HDFC · ICICI, via Account Aggregator
-                      </span>
-                    </div>
-                    <span className="text-[10.5px] font-extrabold text-[#07995C] bg-[#E6F4EA]/60 px-2.5 py-1 rounded-full font-poppins shrink-0">
-                      Active
-                    </span>
-                  </div>
-
-                  {/* Credit bureau */}
-                  <div className="p-4 flex items-center justify-between">
-                    <div className="flex flex-col min-w-0 pr-4">
-                      <span className="text-xs font-bold text-slate-800 font-poppins leading-none">
-                        Credit bureau
-                      </span>
-                      <span className="text-[9px] text-slate-400 font-poppins mt-1.5 leading-normal">
-                        Score and accounts, refreshed monthly
-                      </span>
-                    </div>
-                    <span className="text-[10.5px] font-extrabold text-[#07995C] bg-[#E6F4EA]/60 px-2.5 py-1 rounded-full font-poppins shrink-0">
-                      Active
-                    </span>
-                  </div>
-
-                  {/* SMS parsing */}
-                  <div className="p-4 flex items-center justify-between">
-                    <div className="flex flex-col min-w-0 pr-4">
-                      <span className="text-xs font-bold text-slate-800 font-poppins leading-none">
-                        SMS parsing
-                      </span>
-                      <span className="text-[9px] text-slate-400 font-poppins mt-1.5 leading-normal">
-                        Bank messages only
-                      </span>
-                    </div>
-                    <span className="text-[10.5px] font-extrabold text-[#07995C] bg-[#E6F4EA]/60 px-2.5 py-1 rounded-full font-poppins shrink-0">
-                      Active
-                    </span>
-                  </div>
-
-                  {/* Email parsing */}
-                  <div className="p-4 flex items-center justify-between">
-                    <div className="flex flex-col min-w-0 pr-4">
-                      <span className="text-xs font-bold text-slate-800 font-poppins leading-none">
-                        Email parsing
-                      </span>
-                      <span className="text-[9px] text-slate-400 font-poppins mt-1.5 leading-normal">
-                        Bills and statements only
-                      </span>
-                    </div>
-                    <span className="text-[10.5px] font-extrabold text-[#07995C] bg-[#E6F4EA]/60 px-2.5 py-1 rounded-full font-poppins shrink-0">
-                      Active
-                    </span>
-                  </div>
-
-                </div>
-                <p className="text-[9.5px] text-slate-400 text-center font-poppins leading-normal pt-1">
-                  Pause or revoke any of these anytime. Your data stays yours.
-                </p>
-              </div>
-
-              {/* Transactions Section */}
-              <div className="space-y-3">
-                <span className="text-[9.5px] font-bold tracking-wider text-slate-400 uppercase font-poppins pl-1">
-                  TRANSACTIONS
-                </span>
-                <div className="bg-white rounded-2xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.01)] overflow-hidden">
-                  <div className="p-4 flex items-center justify-between">
-                    <div className="flex flex-col min-w-0 pr-4">
-                      <span className="text-xs font-bold text-slate-800 font-poppins leading-none">
-                        Auto-sync transaction history
-                      </span>
-                      <span className="text-[9px] text-slate-400 font-poppins mt-1.5 leading-normal">
-                        Refreshes background logs every 24 hours
-                      </span>
-                    </div>
-                    <span className="text-[10.5px] font-extrabold text-[#07995C] bg-[#E6F4EA]/60 px-2.5 py-1 rounded-full font-poppins shrink-0">
-                      Active
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
+        <Profile
+          onClose={() => setShowProfileOverlay(false)}
+          onNavigate={onNavigate}
+          goals={goals}
+          balanceVisible={balanceVisible}
+          setBalanceVisible={setBalanceVisible}
+        />
       )}
 
     </div>
